@@ -1,4 +1,4 @@
-\let state = 0 ;
+let state = 0 ;
 
 function setup() {
   createCanvas(500, 500);
