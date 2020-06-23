@@ -1,4 +1,4 @@
-let state = 0 ;
+\let state = 0 ;
 
 function setup() {
   createCanvas(500, 500);
@@ -15,12 +15,12 @@ switch(state){
 
   case 1:
   background('red');
-  text("Flame Princess, you're okay",115,200);
+  text("Flame Princess, you're okay.",115,200);
   break ;
 
   case 2:
   background('blue');
-  text("Wildberry Princess, could be better",80,250);
+  text("Wildberry Princess, could be better.",80,250);
   break ;
 }
 
