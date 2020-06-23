@@ -30,5 +30,6 @@ function mouseReleased(){
   state = state + 1;
   if (state > 2){
     state = 0;
-  }
+}
+
 }
