@@ -1,7 +1,11 @@
+let bg;
+
 let cars = [];
 
 function setup() {
+  bg = loadImage('assets/finding nemo.jpg');
   createCanvas(500, 500);
+  noStroke();
 
   for (let i = 0; i < 40; i++) {
     cars.push(new Car());
@@ -10,7 +14,7 @@ function setup() {
 }
 
 function draw() {
-  background('white');
+     background(bg);
 
    for (let i = 0; i < cars.length; i++) {
     cars[i].display();
@@ -24,7 +28,7 @@ function draw() {
 
 class Car {
   constructor() {
-    this.pos = createVector(width / 2, height / 2);
+    this.pos = createVector(250, 250);
     this.vel = createVector(random(-3, 3), random(-3, 3));
     this.vel = createVector(random(-3, 3), random(-3, 3));
     this.r = random(255);
@@ -36,8 +40,8 @@ class Car {
 
   display() {
    fill(this.r, this.g, this.b, this.a) ;
-   textSize(this.size) ;
-   text("ART", this.pos.x, this.pos.y);
+   //textSize(this.size) ;
+   ellipse(this.pos.x, this.pos.y, 10, 10);
   }
 
   update() {
