@@ -9,8 +9,8 @@ let f;
 
 
 function preload() {
- song = loadSound('assets/22.mp3');
-   song.loop();
+ song = loadSound('assets/nmare.mp3');
+ song.loop();
  f = loadFont('assets/2.ttf');
 }
 
@@ -83,6 +83,10 @@ function mouseReleased() {
     song.play();
     image(bg,width/2,height/2);
   }
+
+  function touchStarted() {
+  getAudioContext().resume();
+}
 
 
 

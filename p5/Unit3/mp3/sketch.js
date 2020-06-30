@@ -2,6 +2,7 @@ let cars = []; // an array for the objects
 let frogPos ;
 let state = 0 ;
 let timer = 0 ;
+let song1, song2, song3;
 
 
 function setup() {
@@ -21,6 +22,9 @@ function draw () {
   game() ;
 
 switch(state){
+   case -1:
+
+   break;
 
    case 0:
    background('grey') ; //put an image here later
