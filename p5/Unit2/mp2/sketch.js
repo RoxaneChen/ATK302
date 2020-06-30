@@ -9,9 +9,10 @@ let f;
 
 
 function preload() {
+  f = loadFont('assets/2.ttf');
  song = loadSound('assets/nmare.mp3');
  song.loop();
- f = loadFont('assets/2.ttf');
+
 }
 
 
@@ -76,20 +77,17 @@ function mouseReleased() {
   state++;
   if (state > 2) state = 0;
  if (song.isPlaying()) {
-    // .isPlaying() returns a boolean
-    song.pause(); // .play() will resume from .pause() position
-    image(pic3,350,500,400,500);
-  } else {
-    song.play();
-    image(bg,width/2,height/2);
-  }
+   song.stop();
+
+ } else {
+   song.play();
+   background(0, 255, 0);
+ }
+
+
+
+}
 
   function touchStarted() {
   getAudioContext().resume();
-}
-
-
-
-
-
 }
