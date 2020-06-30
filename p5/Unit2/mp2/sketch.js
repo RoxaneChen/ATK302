@@ -10,6 +10,7 @@ let f;
 
 function preload() {
  song = loadSound('assets/22.mp3');
+   song.loop();
  f = loadFont('assets/2.ttf');
 }
 
@@ -17,7 +18,6 @@ function preload() {
 
 function setup() {
   createCanvas(1100, 654);
-  song.loop();
   bg = loadImage('assets/Night.jpg');
   pic1 = loadImage("assets/witch.jpg");
   pic2 = loadImage("assets/21.jpg");
