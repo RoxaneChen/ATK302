@@ -21,9 +21,9 @@ function setup() {
   createCanvas(1100, 654);
   bg = loadImage('assets/Night.jpg');
   pic1 = loadImage("assets/witch.jpg");
-  pic2 = loadImage("assets/21.jpg");
-  pic3 = loadImage("assets/22.jpg");
-  pic4 = loadImage("assets/23.jpg");
+  pic2 = loadImage("assets/2-1.jpg");
+  pic3 = loadImage("assets/2-2.jpg");
+  pic4 = loadImage("assets/2-3.jpg");
   imageMode(CENTER);
   textSize(100);
   textAlign(CENTER);
