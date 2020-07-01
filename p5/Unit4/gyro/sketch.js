@@ -10,7 +10,8 @@ var y = 0;
 var z = 0;
 
 // other variables
-var bunnyImage;
+
+var casperImage;
 
 function setup() {
 
@@ -22,7 +23,7 @@ function setup() {
   gamma = 0;
 
 // initialize other variables
-  bunnyImage = loadImage("assets/bunny.jpg");
+  bunnyImage = loadImage("assets/33.jpg");
   imageMode(CENTER);
   rectMode(CENTER);
 
@@ -31,7 +32,7 @@ function setup() {
 function draw() {
 
   background('#c6f5fe'); // light blue
-    // add an image for the background? 
+    // add an image for the background?
 
   // the map command !!!!
   // takes your variable and maps it from range 1 to range 2
