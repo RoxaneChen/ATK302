@@ -11,7 +11,7 @@ var z = 0;
 
 // other variables
 
-var casperImage;
+var bunnyImage;
 
 function setup() {
 
@@ -23,7 +23,7 @@ function setup() {
   gamma = 0;
 
 // initialize other variables
-  casperImage = loadImage("assets/33.jpg");
+  bunnyImage = loadImage("assets/33.jpg");
   imageMode(CENTER);
   rectMode(CENTER);
 
