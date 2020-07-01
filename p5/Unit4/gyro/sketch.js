@@ -23,7 +23,7 @@ function setup() {
   gamma = 0;
 
 // initialize other variables
-  bunnyImage = loadImage("assets/33.jpg");
+  carperImage = loadImage("assets/33.jpg");
   imageMode(CENTER);
   rectMode(CENTER);
 
