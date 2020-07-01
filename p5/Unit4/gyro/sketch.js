@@ -55,7 +55,7 @@ function draw() {
   noStroke();
   textSize(300);
   textAlign(CENTER);
-  text("atk", width / 2, height / 2);
+  text("Ghost", width / 2, height / 2);
 
   // DECORATIONS
   // Just a bunch of text commands to display data coming in from addEventListeners
