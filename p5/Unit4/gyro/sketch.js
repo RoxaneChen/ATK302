@@ -23,7 +23,7 @@ function setup() {
   gamma = 0;
 
 // initialize other variables
-  carperImage = loadImage("assets/33.jpg");
+  casperImage = loadImage("assets/33.jpg");
   imageMode(CENTER);
   rectMode(CENTER);
 
