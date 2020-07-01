@@ -53,9 +53,10 @@ function draw() {
   // Here is where you can design this program!
   fill('white');
   noStroke();
-  textSize(300);
+  textSize(100);
   textAlign(CENTER);
   text("Ghost", width / 2, height / 2);
+
 
   // DECORATIONS
   // Just a bunch of text commands to display data coming in from addEventListeners
