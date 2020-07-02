@@ -30,16 +30,16 @@ function setup() {
   pic3 = loadImage("assets/lose.jpg");
   imageMode(CENTER);
 
-  birds[0] = loadImage("assets/bird5.png");
-  birds[1] = loadImage("assets/bird6.png");
-  birds[2] = loadImage("assets/bird7.png");
-  yodaRight = loadImage("assets/09.gif");
-  yodaLeft = loadImage("assets/03.gif");
+  birds[0] = loadImage("assets/fire5.png");
+  birds[1] = loadImage("assets/fire6.png");
+  birds[2] = loadImage("assets/fire7.png");
+  yodaRight = loadImage("assets/09.jpg");
+  yodaLeft = loadImage("assets/03.jpg");
   yoda = yodaRight;
 
 
 
-  bird = loadImage("assets/bird1.png");
+  bird = loadImage("assets/fire5.png");
 
   // spawn cars!!!
   for (var i = 0; i < maxBirds; i++) {
