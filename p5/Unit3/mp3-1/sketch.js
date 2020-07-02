@@ -1,5 +1,5 @@
 let cars = [];
-let pic1, pic2, pic3;
+let pic1, pic2, pic3,pic4;
 let frogPos;
 let myState = -1;
 let timer = 0;
@@ -30,7 +30,7 @@ function setup() {
   pic1 = loadImage("assets/welcome1.png");
   pic2 = loadImage("assets/play.jpg");
   pic3 = loadImage("assets/lose1.png");
-  //pic4 = loadImage("assets/win.png")
+  pic4 = loadImage("assets/win.png")
   imageMode(CENTER);
 
   birds[0] = loadImage("assets/fire5.png");
@@ -94,7 +94,7 @@ function draw() {
       break;
 
     case 2: // the win state
-      image(pic3, width/2, height/2, windowWidth, windowHeight);
+      image(pic4, width/2, height/2, windowWidth, windowHeight);
       //fill('white');
       //text("YOU WON!!!", 100, 100);
       break;

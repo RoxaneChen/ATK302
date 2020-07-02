@@ -18,7 +18,7 @@ function setup() {
 
   createCanvas(windowWidth, windowHeight);
   img1 = loadImage("assets/001.jpg") ;
-  img2 = loadImage("assets/002.png") ;
+  img2 = loadImage("assets/002.jpg") ;
 
   // initialize accelerometer variables
   alpha = 0;
@@ -36,7 +36,7 @@ frogPos = createVector(width / 2,height -80);
 
 
 // initialize other variables
-  bunnyImage = loadImage("assets/1.jpg");
+  bunnyImage = loadImage("assets/1.png");
   imageMode(CENTER);
   rectMode(CENTER);
 
