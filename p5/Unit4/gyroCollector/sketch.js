@@ -18,7 +18,7 @@ function setup() {
 
   createCanvas(windowWidth, windowHeight);
   img1 = loadImage("assets/001.jpg") ;
-  img2 = loadImage("assets/002.jpg") ;
+  img2 = loadImage("assets/1.png") ;
 
   // initialize accelerometer variables
   alpha = 0;
@@ -36,7 +36,7 @@ frogPos = createVector(width / 2,height -80);
 
 
 // initialize other variables
-  bunnyImage = loadImage("assets/1.png");
+  bunnyImage = loadImage("assets/002.jpg");
   imageMode(CENTER);
   rectMode(CENTER);
 
@@ -44,7 +44,7 @@ frogPos = createVector(width / 2,height -80);
 
 function draw() {
 
-  background('#c6f5fe'); // light blue
+  //background('#c6f5fe'); // light blue
   image(img1,width/2,height/2,width,height) ;
 
   // the map command !!!!
