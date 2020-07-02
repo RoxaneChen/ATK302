@@ -1,20 +1,50 @@
 let cars = []; // an array for the objects
 let frogPos ;
-let state = 0 ;
+let state = -1 ;
 let timer = 0 ;
+let yoda, yodaRight, yodaLeft;
+let bird;
+let birds = [];
 let song1, song2, song3;
+let maxBirds = 10 ;
+
+function preload() {
+  song1 = loadSound("assets/donkey.mp3");
+  song2 = loadSound("assets/skate.mp3");
+  song3 = loadSound("assets/thrill.mp3");
+  song1.loop();
+  song2.loop();
+  song3.loop();
+  song1.pause();
+  song2.pause();
+  song3.pause();
+}
 
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
 
-frogPos = createVector(width/2, height-120);
+birds[0] = loadImage("assets/bird1.png");
+birds[1] = loadImage("assets/bird2.png");
+birds[2] = loadImage("assets/bird3.png");
+yodaRight = loadImage("assets/yodaRight.gif");
+yodaLeft = loadImage("assets/yodaLeft.gif");
+yoda = yodaRight;
 
-  // spawn the objects
-  for (let i = 0; i < 10; i++) {
-    cars.push(new Car());  // put the objects onto the cars array
+
+bird = loadImage("assets/bird1.png");
+
+  // spawn cars!!!
+  for (var i = 0; i < maxBirds; i++) {
+    cars.push(new Car());
   }
-}
+
+
+
+frogPos = createVector(width/2, height-120);
+rectMode(CENTER);
+ellipseMode(CENTER);
+imageMode(CENTER);
 
 
 function draw () {
@@ -23,19 +53,23 @@ function draw () {
 
 switch(state){
    case -1:
-
+   song1.play();
+   myState = 0;
    break;
 
    case 0:
    background('grey') ; //put an image here later
+   fill('white');
    text("welcome to my game!", 200, 200);
    break;
 
    case 1: // game state
    game();
    timer++ ;
-   if (timer > 200) {
+   if (timer > 1000) {
       state = 3;
+      stopTheSongs();
+      song3.play();
       timer = 0;
    }
 
