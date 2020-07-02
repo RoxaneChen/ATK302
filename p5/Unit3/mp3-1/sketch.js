@@ -11,7 +11,7 @@ let maxBirds = 10;
 //let f;
 
 function preload() {
-  f = loadFont('assets/Godzilla.ttf');
+  //f = loadFont('assets/Godzilla.ttf');
   song1 = loadSound("assets/welcome.mp3");
   song2 = loadSound("assets/play.mp3");
   song3 = loadSound("assets/lose.mp3");
