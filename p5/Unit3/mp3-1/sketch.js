@@ -1,5 +1,5 @@
 let cars = [];
-let pic1,pic2,pic3;
+let pic1, pic2, pic3,pic4;
 let frogPos;
 let myState = -1;
 let timer = 0;
@@ -7,9 +7,11 @@ let yoda, yodaRight, yodaLeft;
 let bird;
 let birds = [];
 let song1, song2, song3;
-let maxBirds = 10 ;
+let maxBirds = 10;
+//let f;
 
 function preload() {
+  f = loadFont('assets/Godzilla.ttf');
   song1 = loadSound("assets/welcome.mp3");
   song2 = loadSound("assets/play.mp3");
   song3 = loadSound("assets/lose.mp3");
@@ -25,9 +27,10 @@ function setup() {
 
   createCanvas(windowWidth, windowHeight);
 
-  pic1 = loadImage("assets/welcome.jpg");
+  pic1 = loadImage("assets/welcome1.png");
   pic2 = loadImage("assets/play.jpg");
-  pic3 = loadImage("assets/lose.jpg");
+  pic3 = loadImage("assets/lose1.png");
+  pic4 = loadImage("assets/win.png")
   imageMode(CENTER);
 
   birds[0] = loadImage("assets/fire5.png");
@@ -37,6 +40,10 @@ function setup() {
   yodaLeft = loadImage("assets/03.jpg");
   yoda = yodaRight;
 
+  //textMode(CENTER);
+  //textSize(80);
+  //textAlign(CENTER);
+  //textFont(f);
 
 
   bird = loadImage("assets/fire5.png");
@@ -52,6 +59,7 @@ function setup() {
   rectMode(CENTER);
   ellipseMode(CENTER);
   imageMode(CENTER);
+  //textMode(CENTER);
 }
 
 function draw() {
@@ -65,16 +73,17 @@ function draw() {
 
     case 0: // splash screen
       // welcome to my game, click to start
-      background(pic1,windowWidth,windowHeight);
-      fill('white');
-      text("welcome to my game! click!", 100, 100);
-      text("YAY", 100, 200);
+      image(pic1, width/2, height/2, windowWidth, windowHeight);
+      //fill('white');
+      //textMode(CENTER);
+      //text("welcome to the game! ", 100, 100);
+      //text("Damour' world", 100, 200);
       break;
 
     case 1: // the game state
 
       game();
-      background(pic2,windowWidth,windowHeight);
+      //image(pic2, width / 2, height / 2, windowWidth, windowHeight);
       timer++;
       if (timer > 1000) {
         myState = 3; // going to the lose state
@@ -85,16 +94,17 @@ function draw() {
       break;
 
     case 2: // the win state
-      background(pic3,windowWidth,windowHeight);
-      fill('white');
-      text("YOU WON!!!", 100, 100);
+      image(pic4, width/2, height/2, windowWidth, windowHeight);
+      //fill('white');
+      //text("YOU WON!!!", 100, 100);
       break;
 
     case 3: // the lose state
-      background(pic3,windowWidth,windowHeight);
-      fill('white');
-      text("You LOST!", 100, 100);
+      image(pic3, width/2, height/2, windowWidth, windowHeight);
+      //fill('white');
+      //text("YOU LOST!", 100, 100);
       break;
+
   }
 }
 
@@ -201,7 +211,7 @@ function resetTheGame() {
 
 
 function game() {
-  background(pic2,windowWidth,windowHeight);
+  image(pic2, width/2, height/2, windowWidth, windowHeight);
   for (var i = 0; i < cars.length; i++) {
     cars[i].display();
     cars[i].drive();
@@ -222,7 +232,11 @@ function game() {
 
   // draw the frog
   //fill('green');
-  //  ellipse(frogPos.x, frogPos.y, 60, 60);
-  image(yoda, frogPos.x, frogPos.y, 80, 80);
+  //ellipse(frogPos.x, frogPos.y, 60, 60);
+  image(yoda, frogPos.x, frogPos.y, 440,270);
   checkForKeys();
+}
+
+function touchStarted() {
+  getAudioContext().resume();
 }
