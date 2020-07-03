@@ -147,9 +147,10 @@ function Car() {
   this.display = function() {
     fill(this.r, this.g, this.a);
     //  ellipse(this.pos.x,this.pos.y,50,50);
-    image(img2, this.pos.x, this.pos.y, 50, 50);
+    //image(img2, this.pos.x, this.pos.y, 50, 50);
     //  ellipse(this.pos.x + 35,this.pos.y,50,50);
     //  rect(this.pos.x + 20,this.pos.y - 30,80,60);
+    star(this.pos.x, this.pos.y, 4, 11, 5);
 
   }
 
@@ -166,7 +167,7 @@ function Car() {
 
 
 }
-star(this.pos.x, this.pos.y, 4, 11, 5);
+//star(this.pos.x, this.pos.y, 4, 11, 5);
 
 function star(x, y, radius1, radius2, npoints) {
   var angle = TWO_PI / npoints;
