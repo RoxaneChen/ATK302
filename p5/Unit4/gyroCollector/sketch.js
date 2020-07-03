@@ -4,21 +4,22 @@ var yPosition = 0;
 var x = 0; // acceleration data
 var y = 0;
 var z = 0;
-let img1 ;
-let img2 ;
-let cars = [] ;
-let f ;
+let img1;
+let img2;
+let cars = [];
+let f;
 // other variables
 var bunnyImage;
 
 function preload() {
   f = loadFont('assets/fairy.ttf');
 }
+
 function setup() {
 
   createCanvas(windowWidth, windowHeight);
-  img1 = loadImage("assets/001.jpg") ;
-  img2 = loadImage("assets/1.png") ;
+  img1 = loadImage("assets/001.jpg");
+  img2 = loadImage("assets/1.png");
 
   // initialize accelerometer variables
   alpha = 0;
@@ -28,14 +29,14 @@ function setup() {
 
   textFont(f);
 
-for (var l = 0;l < 30;l++){
-  cars.push(new Car());
-}
+  for (var l = 0; l < 30; l++) {
+    cars.push(new Car());
+  }
 
-frogPos = createVector(width / 2,height -80);
+  frogPos = createVector(width / 2, height - 80);
 
 
-// initialize other variables
+  // initialize other variables
   bunnyImage = loadImage("assets/002.jpg");
   imageMode(CENTER);
   rectMode(CENTER);
@@ -45,7 +46,7 @@ frogPos = createVector(width / 2,height -80);
 function draw() {
 
   //background('#c6f5fe'); // light blue
-  image(img1,width/2,height/2,width,height) ;
+  image(img1, width / 2, height / 2, width, height);
 
   // the map command !!!!
   // takes your variable and maps it from range 1 to range 2
@@ -62,7 +63,7 @@ function draw() {
 
 
   // Here is where you can design this program!
-  image(img2,width/2,height/2,width,height) ;
+  image(img2, 0, 0, 150, 150);
   pop();
 
 
@@ -70,17 +71,17 @@ function draw() {
   frogPos.y = yPosition;
 
   for (var i = 0; i < cars.length; i++) {
-   cars[i].display();
-   cars[i].drive();
-   if (cars[i].pos.dist(frogPos)<50){
-     cars.splice(i,1);
-   }
+    cars[i].display();
+    cars[i].drive();
+    if (cars[i].pos.dist(frogPos) < 50) {
+      cars.splice(i, 1);
+    }
   }
 
   fill('white');
   textSize(80);
   textAlign(CENTER);
-  text("tinker bell",width/2,600,windowWidth - 200,windowHeight - 200);
+  text("tinker bell", width / 2, 600, windowWidth - 200, windowHeight - 200);
   // DECORATIONS
   // Just a bunch of text commands to display data coming in from addEventListeners
   // textAlign(LEFT);
@@ -100,11 +101,13 @@ function draw() {
 
 
 
+
+
 }
 
-function deviceShaken(){
+function deviceShaken() {
   cars = [];
-  for (var i = 0;i < 40;i++){
+  for (var i = 0; i < 40; i++) {
     cars.push(new Car())
   }
 }
@@ -132,32 +135,50 @@ window.addEventListener('devicemotion', function(e) {
 
 
 
-function Car(){
-  this.pos = createVector(100,100);
-  this.vel = createVector(random(-5,5),random(-5,5));
+function Car() {
+  this.pos = createVector(100, 100);
+  this.vel = createVector(random(-5, 5), random(-5, 5));
   this.r = random(255);
-    this.g = random(255);
-      this.b = random(255);
-        this.a = random(255);
+  this.g = random(255);
+  this.b = random(255);
+  this.a = random(255);
 
 
-        this.display = function(){
-          fill(this.r,this.g,this.a);
-        //  ellipse(this.pos.x,this.pos.y,50,50);
-        image(img2,this.pos.x, this.pos.y, 50, 50) ;
-        //  ellipse(this.pos.x + 35,this.pos.y,50,50);
-        //  rect(this.pos.x + 20,this.pos.y - 30,80,60);
+  this.display = function() {
+    fill(this.r, this.g, this.a);
+    //  ellipse(this.pos.x,this.pos.y,50,50);
+    image(img2, this.pos.x, this.pos.y, 50, 50);
+    //  ellipse(this.pos.x + 35,this.pos.y,50,50);
+    //  rect(this.pos.x + 20,this.pos.y - 30,80,60);
 
-        }
+  }
 
-        this.drive = function(){
-          this.pos.add(this.vel);
+  this.drive = function() {
+    this.pos.add(this.vel);
 
-          if (this.pos.x > width) this.pos.x = 0;
-          if (this.pos.x < 0) this.pos.x = width;
-          if (this.pos.y > height) this.pos.y = 0;
-          if (this.pos.y < 0) this.pos.y = height;
+    if (this.pos.x > width) this.pos.x = 0;
+    if (this.pos.x < 0) this.pos.x = width;
+    if (this.pos.y > height) this.pos.y = 0;
+    if (this.pos.y < 0) this.pos.y = height;
 
 
-        }
+  }
+
+
+}
+star(this.pos.x, this.pos.y, 4, 11, 5);
+
+function star(x, y, radius1, radius2, npoints) {
+  var angle = TWO_PI / npoints;
+  var halfAngle = angle / 2.0;
+  beginShape();
+  for (var a = 0; a < TWO_PI; a += angle) {
+    var sx = x + cos(a) * radius2;
+    var sy = y + sin(a) * radius2;
+    vertex(sx, sy);
+    sx = x + cos(a + halfAngle) * radius1;
+    sy = y + sin(a + halfAngle) * radius1;
+    vertex(sx, sy);
+  }
+  endShape(CLOSE);
 }
